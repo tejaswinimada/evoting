@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+        
+        nav {
+            background-color: #34495e;
+            color: white;
+            padding: 10px;
+            text-align: right;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+        
+        nav a:hover {
+            color: #e74c3c;
+        }
+        
+        .slider {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #34495e;
+            overflow-x: hidden;
+            padding-top: 60px;
+            transition: 0.5s;
+        }
+        
+        .slider a {
+            padding: 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+            transition: background-color 0.3s ease-in-out;
+        }
+        
+        .slider a:hover {
+            background-color: #2c3e50;
+        }
+        
+        .slider .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 30px;
+            margin-left: 50px;
+        }
+        
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        form p {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        
+        form input[type="radio"] {
+            margin-right: 10px;
+        }
+        
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+    </style>
+    
+</head>
+<body>
+    <header>
+        <h2>Voting System</h2>
+    </header>
+    <nav>
+        <a href="#" onclick="openNav()">Dashboard☰</a>
+        <a href="/">Home</a> 
+    <div id="mySidenav" class="slider">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">Exit       ×</a>
+        <hr>
+{% comment %}         
+        <a href="{% url 'logout' %}">Logout</a> {% endcomment %}
+
+    </div>
+    <form>
+        <p>Choose your vote for UDAAN CLUB</p>
+        <input type="radio" id="teja" name="udaan" value="TEJA">
+        <label for="teja">TEJA</label>
+        <input type="radio" id="deepika" name="udaan" value="DEEPIKA">
+        <label for="deepika">DEEPIKA</label>
+        <input type="radio" id="priya" name="udaan" value="PRIYA">
+        <label for="priya">PRIYA</label>
+
+        <p>Choose your vote for URJA CLUB</p>
+        <input type="radio" id="manasa" name="urja" value="MANASA">
+        <label for="manasa">MANASA</label>
+        <input type="radio" id="gowthami" name="urja" value="GOWTHAMI">
+        <label for="gowthami">GOWTHAMI</label>
+        <input type="radio" id="lucky" name="urja" value="LUCKY">
+        <label for="lucky">LUCKY</label>
+
+        <p>Choose your vote for UTHAAN CLUB</p>
+        <input type="radio" id="bhanu" name="uthaan" value="BHANU">
+        <label for="bhanu">BHANU</label>
+        <input type="radio" id="rakesh" name="uthaan" value="RAKESH">
+        <label for="rakesh">RAKESH</label>
+        <input type="radio" id="harsha" name="uthaan" value="HARSHA">
+        <label for="harsha">HARSHA</label>
+
+        <button type="submit">SUBMIT</button>
+    </form>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "200px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+</body>
+</html>
